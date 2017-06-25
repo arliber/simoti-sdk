@@ -1,0 +1,1 @@
+var gdcet_render_core;(function($,a,b,c){gdcet_render_core={init:function(){gdcet_render_core.widgets()},widgets:function(){$(".gdcet-dropdown-terms").change(function(){location.href=$(this).val()})}};gdcet_render_core.init()})(jQuery,window,document);
