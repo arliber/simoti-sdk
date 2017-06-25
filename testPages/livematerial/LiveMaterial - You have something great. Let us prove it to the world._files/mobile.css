@@ -1,0 +1,73 @@
+@media (max-width: 48em) { /*Tablets, small screens*/
+    #campaign-wizard section {
+        flex-direction: column;
+    }
+    #campaign-wizard #submit-phase .form {
+        flex: 1;
+    }
+    #campaign-wizard #contact-details .form {
+        flex: 1;
+    }
+    #campaign-wizard aside {
+        order: 1;
+        margin: 0;
+    }
+    #targeting .form-elements {
+        flex-direction: column;
+    }
+    #targeting .form-elements #categories + span {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    #submit-phase aside { /*It adds extra space on top on mobiles - so hide it*/
+        display: none;
+    }
+    #about-content {
+        flex-direction: column-reverse;
+    }
+    #about-content img {
+        width: 100%;
+    }
+    #contact {
+        flex-direction: column;
+    }
+    #contact-form {
+        padding-right: 15px;
+        transition: 0.5s;
+    }
+    #info-card {
+        margin: 0 0 20px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 35em) { /*Mobile*/
+    nav {
+        opacity: 0;
+    }
+    #campaign-wizard #contact-details .form-elements {
+        display: flex;
+        flex-direction: column;
+    }
+    #features {
+        flex-direction: column;
+    }
+    #features div:nth-child(1), #features div:nth-child(2), #features div:nth-child(3)  {
+        border-bottom: 1px solid #C7C7C7;
+    }
+    #features div:nth-child(2), #features div:nth-child(3)  {
+        border-right: none;
+        border-left: none;
+    }
+    #hero section {
+        width: 250px;
+        transition: 0.5s;
+    }
+    #publishers article {
+        flex: 1 1 100%;
+    }
+    #publisher-logos {
+        flex: 1 1 100%;
+    }
+    
+}

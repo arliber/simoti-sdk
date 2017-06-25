@@ -1,0 +1,604 @@
+body {
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.container {
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.small-container {
+    max-width: 38em;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+input[type="text"], textarea {
+    border-radius: 3px;
+    border: 1px solid #B0B0B0;
+    padding: 5px;
+    display: block;
+    width: 100%;
+    font-weight: 100;
+}
+input[type="text"]:focus , textarea:focus, .select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #4A90E2;
+    outline: none; /*Remove the annoying glow*/
+}
+button {
+    outline: none; /*Remove the annoying glow*/
+}
+
+.button.default {
+    text-decoration: none;
+    border: 2px solid #4A90E2;
+    color: #4A90E2;
+    background: none;
+    margin-top: 20px;
+    padding: 5px 30px;
+}
+
+.button.default:hover {
+    color: #fff;
+    background: #4A90E2;
+}
+
+/* HEADER */
+
+header {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header hgroup {
+    display: flex;
+    align-items: center;
+
+}
+
+hgroup h1 {
+    color: #B1B1B1;
+    font-size: 18px;
+    margin-left: 16px
+}
+hgroup h1 span {
+    color: #A4A2A4;
+}
+
+
+header#logo {
+    width: 72px;
+    height: 68px;
+}
+header hgroup h1 {
+    font-size: 25px;
+}
+nav {
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: 0.5s; /*Animate this because it changes in mobile.css*/
+}
+
+nav a {
+    color: #4A90E2;
+    padding-bottom: 3px;
+    text-decoration: none;
+    margin-left: 12px;
+}
+
+nav a:nth-child(even):hover {
+    border-bottom: 2px solid #4A90E2; /*was 'border-top'*/
+}
+nav a:nth-child(odd):hover {
+    border-bottom: 2px solid #4A90E2;
+}
+
+/*nav a:last-child {
+  font-weight: 600;
+}*/
+
+/* HERO */
+
+#hero {
+    height: 350px;
+    background: url(../img/hero-optimized.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero section {
+    background: rgba(255,255,255,0.9);
+    width: 400px;
+    transition: 0.5s; /*Animate this because it changes in mobile.css*/
+    text-align: center;
+    padding: 20px;
+    font-weight: 300;
+    border-left: 4px solid #4A90E2;
+}
+#hero section p {
+    margin: 0 0 25px 0;
+}
+
+/* FEATURES */
+
+.features-container {
+    padding: 0;
+    border-bottom: 1px solid #C7C7C7;
+}
+.features-container .container {
+    padding: 0; /*Overwrite default container padding*/
+}
+#features {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+#features div {
+    flex: 1;
+    padding: 30px 15px 15px 15px;
+}
+#features div img {
+    height: 60px;
+}
+#features div:nth-child(2) {
+    border-right: 1px solid #C7C7C7;
+    border-left: 1px solid #C7C7C7;
+}
+#features div:nth-child(3) {
+    border-right: 1px solid #C7C7C7;
+}
+#features div h3 {
+    font-family: 'Quattrocento', serif;
+    font-weight: 700;
+}
+#features div p {
+   font-weight: 200;
+}
+
+/* CAMPAIGN-WIZARD */
+
+#campaign-wizard {
+    font-weight: 100;
+    position: relative;
+}
+
+#campaign-wizard hgroup {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#campaign-wizard hgroup hr {
+    flex-basis: 20%;
+}
+#campaign-wizard hgroup h1 {
+    margin: 0 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+
+
+#campaign-wizard-form section {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form {
+    flex: 2 1 10em;
+    order: 1;
+    font-size: 14px;
+    -webkit-box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.17);
+    box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.17);
+}
+.form h1 {
+    background: #000;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    font-style: italic;
+    padding: 10px;
+}
+
+#campaign-wizard-form aside {
+    flex: 1 1 1em;
+    order: 2;
+    text-align: center;
+    margin-left: 30px;
+
+}
+#campaign-wizard-form aside h1 {
+    font-family: 'Quattrocento', serif;
+    border-bottom: 2px solid #000;
+    margin: 0;
+}
+
+
+/* CAMPAIGN WIZARD - TARGETING */
+#targeting .form h1 {
+    background: #4A90E2;
+}
+
+#targeting .form-elements {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+#targeting .form-elements  select {
+    /*Invisible element because select2 hides it*/
+}
+#targeting .form-elements #categories + span {
+    margin-right: 15px;
+}
+#targeting aside h1 {
+    color: #4A90E2;
+    border-bottom: 2px solid #4A90E2;
+}
+
+/* CAMPAIGN WIZARD - CONTENT */
+#content .form h1 {
+    background: #BA68C8;
+}
+
+#content .form-elements  {
+    padding: 15px;
+}
+#content .form-elements label {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+}
+#content .form-elements label input {
+    margin-right: 10px;
+}
+
+#content-and-files {
+    display: flex;
+    justify-content: space-between;
+}
+#textual-info {
+    display: block;
+    flex: 1;
+}
+
+.form-elements #textual-info label:last-child {
+    margin-bottom: 0; /*Remove margin for labels for last item*/
+}
+#files-container button {
+    width: 85%;
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+    color: #A4A2A4;
+    text-align: left;
+    padding: 10px 0 10px 22px;
+    border-bottom: 1px solid #4A90E2;
+    background: url(../img/delete-tiny.png) no-repeat left center;
+    margin-left: 25px;
+}
+
+#files-container {
+    margin-left: 30px;
+    flex: 1;
+    background: #efefef;
+    border: 1px dashed #979797;
+    border-radius: 5px;
+    /*Align the content inside*/
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+#files-container.empty {
+    background: url(../img/dropzone.png) no-repeat center center;
+}
+#files-container.full {
+    text-align: left;
+    background: none;
+    justify-content: flex-start;
+    border: none;
+    border-left: 1px dashed #979797;
+}
+#files-container.full p {
+    display: none;
+}
+#content aside h1 {
+    color: #BA68C8;
+    border-bottom: 2px solid #BA68C8;
+}
+
+#content-and-files {
+
+}
+
+/* CAMPAIGN WIZARD - SUBMIT PHASE */
+#contact-details {
+    margin-bottom: 30px;
+}
+#contact-details .form h1 {
+    background: #A2C86A;
+}
+
+#contact-details .form-elements  {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap; /*Reuired for the break-line hack - http://stackoverflow.com/questions/28755460/how-to-break-line-in-a-flex-layout*/
+    justify-content: space-between;
+}
+#contact-details .form-elements label {
+    margin-bottom: 10px;
+}
+#contact-details aside h1 {
+    color: #A2C86A;
+    border-bottom: 2px solid #A2C86A;
+}
+#campaign-wizard-form #submit-phase {
+    margin-bottom: 20px;
+}
+#campaign-wizard-form #submit-phase button {
+    padding: 8px 30px;
+    width: 100%;
+    border: 2px solid #4A90E2;
+    color: #fff;
+    background: #4A90E2;
+    font-size: 18px;
+    /*transition: 0.5s;*/
+}
+/*#campaign-wizard-form button:hover {
+    background: #A2C86A;
+    padding: 14px 40px;
+    color: #fff;
+    transition: 0.5s;
+}*/
+#contact-details label {
+    flex: 1;
+}
+#contact-details label:nth-child(2)::after { /*Break-line hack*/
+    content: '';
+    display: block;
+    width: 100%;
+}
+#contact-details input {
+    width: 90%
+}
+
+/* CAMPAIGN WIZARD OVERLAY */
+#campaign-wizard-overlay {
+    color: #4A90E2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.93);
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+}
+#campaign-wizard-overlay h1 {
+    color: #85C996;
+}
+#campaign-wizard-overlay h2 {
+    margin-bottom: 0;
+}
+
+/* ABOUT */
+#about {
+    background: #393A43;
+}
+#about-content {
+    display: flex;
+    padding: 25px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+#about-content img {
+    width: 50%;
+}
+#about-content article {
+    font-weight: 100;
+    color: #fff;
+    margin-left: 20px;
+}
+#about-content article h2 {
+    margin: 0;
+    font-family: 'Quattrocento', serif;
+    font-weight: 700;
+}
+/* PUBLISHERS */
+#publishers-container {
+    /*background: -moz-linear-gradient(top,  rgba(229,229,229,0.65) 0%, rgba(172,172,172,0) 25%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(229,229,229,0.65) 0%,rgba(172,172,172,0) 25%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(229,229,229,0.65) 0%,rgba(172,172,172,0) 25%,rgba(0,0,0,0) 100%);*/
+    background: url(../img/publishers-bg.jpg) repeat-x;
+    padding: 30px 0;
+}
+#publishers {
+    display: flex;
+    flex-wrap: wrap;
+}
+#publishers article {
+    flex: 1 1 30%;
+    margin-right: 20px;
+    font-weight: 200;
+}
+#publishers article h3 {
+    color: #4A90E2;
+    font-family: 'Quattrocento', serif;
+    font-weight: 700;
+}
+#publisher-logos {
+    flex: 1 1 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+#publisher-logos img {
+    padding: 0 15px 10px 0;
+    width: 70px;
+}
+
+/* PRICING */
+#pricing {
+    background: #fbfbfb;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+#pricing-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#pricing-content article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#pricing-content article h2 {
+    font-family: 'Quattrocento', serif;
+    color: #607D8B;
+    margin: 0;
+}
+#pricing-content article h3 {
+    font-family: 'Quattrocento', serif;
+    font-size: 17px;
+    color: #607D8B;
+    margin: 0;
+}
+#pricing-content article h1 {
+    color: #4A90E2;
+    font-weight: 200;
+    font-size: 80px;
+    margin: 0;
+}
+#pricing-content article p {
+    margin: 0;
+    font-weight: 100;
+    font-size: 14px;
+    word-spacing: 0.2em;
+    letter-spacing: 0.01em;
+    color: #4A90E2;
+    text-align: center;
+}
+#pricing-content img {
+    width: 45%;
+}
+
+/* CONTACT */
+#contact {
+    background: url(../img/contact-bg-optimized.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact-form {
+    transition: 0.5s;
+    margin-top: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 180px 15px 15px;
+}
+#contact-form label {
+    display: block;
+    margin-top: 12px;
+}
+#contact-form input, #contact-form textarea {
+    width: 300px;
+}
+#contact-form h1 {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
+}
+#contact button {
+    color: #fff;
+    margin: 0;
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    display: block;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+    padding: 10px
+}
+#info-card {
+    display: flex;
+    transition: 0.5s;
+    margin: -82px 0 0 -150px;
+    background: #fff;
+    width: 314px;
+    height: 130px;
+    box-shadow: 0px 5px 11px 3px rgba(0,0,0,0.52);
+    background: #fff url(../img/map.jpg) no-repeat right 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 10px;
+}
+#info-card h1 {
+    margin: 0;
+}
+#info-card hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#info-card section {
+    margin-top: -15px;
+}
+#info-card section ul {
+    padding: 0;
+    list-style: none;
+    font-weight: 100;
+    font-size: 14px
+}
+#info-card a {
+    color: #222;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background: #393A43;
+}
+#footer-content {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+    font-weight: 100;
+    font-size: 14px;
+}
+#footer-logo {
+    display: flex;
+    align-items: center;
+}
+#footer-logo img {
+    margin-right: 15px;
+}
