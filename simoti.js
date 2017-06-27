@@ -26,7 +26,8 @@
     // Functions
     function report() {
       console.log('Simoti - report: ', arguments);
-      postRequest('https://us-central1-simoti-171512.cloudfunctions.net/tagLogger', {}, function(err, result) {
+      arguments.ts = new Date().valueOf();
+      postRequest('https://us-central1-simoti-171512.cloudfunctions.net/tagLogger', arguments, function(err, result) {
         if(err) {
           console.log('Simoti: Unable to send log', err);
         }
@@ -79,19 +80,6 @@
       xhr.onerror = function() {
         callback({error: 'unable to send post request'})
       };
-      /*xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            if(xhr.status === 200) {
-              var json = JSON.parse(xhr.responseText);
-              callback(null, json);
-            } else {
-              callback({
-                statusCode: xhr.status,
-                response: json
-              });
-            }
-          }
-      };*/
       xhr.send(JSON.stringify(data));
       return xhr;
     }
