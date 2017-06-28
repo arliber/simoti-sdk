@@ -40,7 +40,7 @@
           report('error', 'init', 'error in getRequest', err);
         } else {
           report('info', 'init', 'got response from server', response);
-          placeSnippet(response.container);
+          placeSnippet(response);
         }
       });
     }
