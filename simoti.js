@@ -40,9 +40,17 @@
           report('error', 'init', 'error in getRequest', err);
         } else {
           report('info', 'init', 'got response from server', response);
-          placeSnippet(response);
+          if(isResponseValid(response)) {
+            placeSnippet(response);
+          } else {
+            report('info', 'init', 'response from server is not a valid snippet');
+          }
         }
       });
+    }
+
+    function isResponseValid(response) {
+      return response && response.contentBefore && response.html && response.status && response.status === 'active' && response.position && response.contentAfter;
     }
 
     function getRequest(url, callback) {
