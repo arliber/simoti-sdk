@@ -1,0 +1,21 @@
+{
+  "name": "Simoti Demo",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Inject Simoti snippets into current page",
+  "homepage_url": "https://snips.simoti.co",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Inject!"
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
