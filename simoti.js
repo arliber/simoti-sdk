@@ -6,8 +6,8 @@
     var waitTime = 0;
     var waitInterval = 10;
     var maxWaitTime = 5000;
-    var snippetUrl = 'https://us-central1-simoti-171512.cloudfunctions.net/getSnippet';
-    var logUrl = 'https://us-central1-simoti-171512.cloudfunctions.net/tagLogger';
+    var snippetUrl = 'https://snips.simoti.co/getSnippet';
+    var logUrl = 'https://snips.simoti.co/tagLogger';
 
     // Init wait loop
     var canStartInterval = setInterval(function() {
@@ -160,13 +160,13 @@
     }
 
     function placeSnippetElement(beforeElement, afterElement, position, snippetHTML) {
-      var parser = new DOMParser()
-      var snippetElement = parser.parseFromString(snippetHTML, 'text/xml');
+      snippetElement = tempdiv = document.createElement('div');
+      snippetElement.innerHTML = snippetHTML;
 
       if(position === 'afterBeforeContent') {
-        beforeElement.parentNode.insertBefore(snippetElement.documentElement, beforeElement.nextSibling);
+        beforeElement.parentNode.insertBefore(snippetElement.firstChild, beforeElement.nextSibling);
       } else if(position === 'beforeAfterContent') {
-        afterElement.parentNode.insertBefore(snippetElement.documentElement, afterElement);
+        afterElement.parentNode.insertBefore(snippetElement.firstChild, afterElement);
       }
     }
 
@@ -174,8 +174,10 @@
       var containerElements = findContainerElements(snippet.contentBefore, snippet.contentAfter);
 
       if(containerElements.beforeElement === containerElements.afterElement) { // Same parent - insert with between text
+        console.log('Same parent - insert with between text')
         placeSnippetHTML(containerElements.afterElement, snippet.contentBefore, snippet.contentAfter, snippet.position, snippet.html);
       } else { // Sperate elements (as should be) - add element between
+        console.log('Sperate elements (as should be) - add element between')
         placeSnippetElement(containerElements.beforeElement, containerElements.afterElement, snippet.position, snippet.html);
       }
 
