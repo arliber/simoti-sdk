@@ -1,13 +1,13 @@
 (function(){
 
-  report('info', 'root', 'loaded, waiting for ready state');
-
   // Vars
   var waitTime = 0;
   var waitInterval = 10;
   var maxWaitTime = 5000;
   var snippetUrl = 'https://snips.simoti.co/getSnippet';
   var logUrl = 'https://snips.simoti.co/tagLogger';
+
+  report('info', 'root', 'loaded, waiting for ready state');
 
   // Init wait loop
   var canStartInterval = setInterval(function() {
@@ -27,7 +27,7 @@
   function report() {
     console.log('Simoti - report: ', arguments);
     arguments.ts = new Date().valueOf();
-    postRequest('https://us-central1-simoti-171512.cloudfunctions.net/tagLogger', arguments, function(err, result) {
+    postRequest(logUrl, arguments, function(err, result) {
       if(err) {
         console.log('Simoti: Unable to send log', err);
       }
