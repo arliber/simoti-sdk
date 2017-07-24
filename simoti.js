@@ -155,12 +155,24 @@
     var afterElement = afterContainers[afterContainers.length - 1];
 
     if(beforeElement !== afterElement) { // Elements are in different containers
-      for(i = beforeContainers.length - 1, j = afterContainers.length - 1; i >= 0 && j >= 0; i--, j--) {
-        if(beforeContainers[i] === afterContainers[j]) {
-          beforeElement = beforeContainers[i+1];
-          afterElement = afterContainers[i+1];
-          break;
+      // Find common ancestor 
+      i = beforeContainers.length - 1;
+      j = afterContainers.length - 1;
+      // Sync indexes
+      while(beforeContainers[i] !== afterContainers[j] && i >= 0 &&  j>= 0) {
+        if(i < j) {
+          j--;
+        } else if(j < i) {
+          i--;
+        } else {
+          i--;
+          j--;
         }
+      }
+      // Select ancestor
+      if (beforeContainers[i] === afterContainers[j]) {
+        beforeElement = beforeContainers[i + 1];
+        afterElement = afterContainers[i + 1];
       }
     }
 
